@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
 // router
 import { useNavigate } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // component
-import ims from '../assets/images/img_car.png'
 import StarRating from "../components/StarRating";
 
 import { productDetailID } from "../slices/productsSlice";

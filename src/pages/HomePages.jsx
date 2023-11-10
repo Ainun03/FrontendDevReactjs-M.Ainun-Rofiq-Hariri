@@ -3,14 +3,12 @@ import React, { Fragment,useState,useEffect } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 
 // PAARTIAL
-import Navbar from "../partials/Navbar";
 import CardProduct from "../partials/Cards";
 
 // COMPONENTS
 import Loader from "../components/Loader";
 function HomePage(){
     const [show, setShow] = useState(true);
-    const [category, setCategory]=useState("")
     const [prices, setPrices]=useState("")
     const [open, setOpen]=useState(false)
     // const [product, setProduct]=useState([])
@@ -59,7 +57,6 @@ function HomePage(){
       })
   })
 const handleSearch =(value)=>{
-    setCategory(value);
     fetchData(value);
 }
 

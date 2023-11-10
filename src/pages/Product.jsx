@@ -5,7 +5,7 @@ import { BsFillChatDotsFill,BsTelephone } from 'react-icons/bs';
 import {BiMap} from 'react-icons/bi'
 
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Review from "../partials/Review";
 import StarRating from "../components/StarRating";
