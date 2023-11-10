@@ -4,9 +4,12 @@ import { toast } from "react-toastify";
 
 const API_URL = 'https://www.thecocktaildb.com'
 
+const detail = JSON.parse(localStorage.getItem('productDetail'))
+
 const initialState = {
     products:[],
     isLoading: false,
+    detail:detail ? detail:{}
 };
 
 export const getProducts = createAsyncThunk(
@@ -37,8 +40,12 @@ export const getProducts = createAsyncThunk(
     initialState,
     reducers: {
       logout: (state) => {
-        //   localStorage.removeItem("banner");
+          localStorage.removeItem("productDetail");
           state.bannerPost= {}
+      },
+      productDetailID:(state,action)=>{
+        state.detail=action.payload
+        localStorage.setItem('productDetail',JSON.stringify(state.detail))
       },
     },
     extraReducers: (builder) => {
@@ -59,6 +66,6 @@ export const getProducts = createAsyncThunk(
   })
   
   
-  export const { logout } = productsSlice.actions;
+  export const { logout,productDetailID } = productsSlice.actions;
   
   export default productsSlice.reducer;
